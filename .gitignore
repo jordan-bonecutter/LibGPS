@@ -1,0 +1,5 @@
+*.ppm
+*.o
+*.rgp
+MainProg
+TestProg
