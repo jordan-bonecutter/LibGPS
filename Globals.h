@@ -9,8 +9,8 @@
 
 #include <assert.h>
 
-static unsigned long bytes_allocd;
-static unsigned long bytes_freed;
+unsigned long bytes_allocd;
+unsigned long bytes_freed;
 
 #define EARTH_RAD_M		6378100.00			// Radius of earth in meters
 #define EARTH_RAD_FT	20925525.0			// Radius of earth in feet

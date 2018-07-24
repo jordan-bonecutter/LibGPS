@@ -129,5 +129,10 @@ int main()
 	SaveImage("testnoll", test);
 	DeleteImage(test);
 	free(gparr.array);
+	bytes_freed += sizeof(GLPoint) * gparr.length;
+	gparr.length = 0;
+
+	printf("Bytes allocd = %ld\n", bytes_allocd);
+	printf("Bytes freed = %ld\n", bytes_freed);
 	return 0;
 }
