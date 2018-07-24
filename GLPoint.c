@@ -51,6 +51,7 @@ GLPointArr newGLPointArr_LL(GPSRectArr raw)
 	
 	GLPointArr res;
 	res.array = malloc(sizeof(GLPoint) * raw.length);
+	bytes_allocd += sizeof(GLPoint) * raw.length;
 	res.length = raw.length;
 	Vector2 LaLo0;
 	LaLo0.x = raw.array[0].theta_lat;
@@ -69,6 +70,8 @@ GLPointArr newGLPointArr_LL(GPSRectArr raw)
 		res.array[n].pt.x *= EARTH_RAD_M;
 		res.array[n].pt.y *= EARTH_RAD_M * sin(raw.array[n].theta_lon);
 	}
+
+	deleteDataGPSRectArr(&raw);
 
 	return res;
 }
